@@ -1,0 +1,10 @@
+PSR-20: Clock
+
+uma maneira padrão de acessar o Clock permitiria interoperabilidade durante testes, ao testar comportamentos que têm efeitos colaterais baseados em tempo.
+
+Obter o carimbo de data/hora atual0 deve ser feito usando o método getTimestamp() no \DateTimeImmutable retornado:
+
+$timestamp = $clock->now()->getTimestamp();
+
+Interface de Clock
+A interface de clock define as operações mais básicas para ler o tempo e a data atuais do clock. ELA DEVE retornar o tempo como um \DateTimeImmutable.

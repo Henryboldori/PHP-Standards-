@@ -1,0 +1,4 @@
+PSR-17: HTTP Factories
+
+Uma HTTP Factory é um método pelo qual um novo objeto HTTP, conforme definido pelo PSR-7, é criado.
+HTTP factories DEVEM implementar essas interfaces para cada tipo de objeto que é fornecido pelo pacote.

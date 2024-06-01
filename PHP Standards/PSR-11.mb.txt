@@ -1,0 +1,7 @@
+PSR-11: Container interface
+
+O objetivo estabelecido pela Container Interface é padronizar como frameworks e bibliotecas utilizam um Container para obter objetos e parâmetros (chamados de entradas no restante deste documento).
+os chamadores NÃO DEVEM assumir que a estrutura da string carrega algum significado semântico.
+Duas chamadas sucessivas para get com o mesmo identificador DEVEM retornar o mesmo valor. 
+has recebe um parâmetro único: um identificador de entrada, que DEVE ser uma string. has DEVE retornar true se um identificador de entrada for conhecido pelo Container e false se não for. Se has($id) retornar false, get($id) DEVE lançar uma NotFoundExceptionInterface.
+Os usuários NÃO DEVEM passar um Container para um objeto para que o objeto possa recuperar suas próprias dependências.

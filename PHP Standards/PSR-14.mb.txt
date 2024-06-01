@@ -1,0 +1,16 @@
+PSR-14: Event Dispatcher
+
+O objetivo deste PSR é estabelecer um mecanismo comum para extensão e colaboração baseada em eventos, para que bibliotecas e componentes possam ser reutilizados com mais liberdade entre várias aplicações e frameworks.
+Os implementadores DEVEM assumir que o mesmo objeto será passado para todos os ouvintes.
+Um evento que implementa a StoppableEventInterface DEVE retornar true de isPropagationStopped() quando qualquer que seja o evento que ele representa for concluído.
+Um ouvinte DEVE ter um e apenas um parâmetro, que é o evento ao qual ele responde. Os ouvintes DEVEM tipar esse parâmetro da forma mais específica possível para seu caso de uso
+Um ouvinte DEVE ter um retorno void, e DEVE tipar explicitamente esse retorno. Um despachante DEVE ignorar os valores de retorno dos ouvintes.
+Um processo secundário DEVE assumir que qualquer alteração que faça em um objeto de evento NÃO se propagará para outros ouvintes.
+
+
+Despachante:
+DEVE chamar os ouvintes de forma síncrona na ordem em que são retornados de um provedor de ouvintes.
+DEVE retornar o mesmo objeto de evento que lhe foi passado depois de terminar de invocar os ouvintes.
+NÃO DEVE retornar ao emissor até que todos os ouvintes tenham sido executados.
+Se passado um evento parável, um despachante
+DEVE chamar isPropagationStopped() no evento antes de cada ouvinte ser chamado. Se esse método retornar true, DEVE retornar o evento imediatamente para o emissor e NÃO DEVE chamar mais.

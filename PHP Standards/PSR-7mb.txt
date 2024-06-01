@@ -1,0 +1,11 @@
+PSR-7: HTTP message interfaces
+
+Uma mensagem HTTP é um pedido de um cliente para um servidor ou uma resposta de um servidor para um cliente. Esta especificação define interfaces para as mensagens HTTP.
+Apesar de que os cabeçalhos possam ser recuperados de forma insensível ao caso, o caso original DEVE ser preservado pela implementação, especialmente quando recuperados com getHeaders(). Durante a construção, as implementações DEVEM tentar definir o cabeçalho Host a partir de um URI fornecido, caso nenhum cabeçalho Host seja fornecido.
+Um cliente HTTP DEVE ignorar os valores de Uri::getPath() e Uri::getQuery(), e em vez disso usar o valor retornado por getRequestTarget(), que por padrão concatena esses dois valores.
+Clientes que optem por não implementar 1 ou mais das 4 formas de request-target, AINDA DEVEM usar getRequestTarget(). Esses clientes DEVEM rejeitar request-targets que não suportam, e NÃO DEVEM recorrer aos valores de getUri().
+
+
+
+
+

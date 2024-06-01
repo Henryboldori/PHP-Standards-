@@ -1,0 +1,31 @@
+PSR-12: Extended Coding Style
+
+Basic Coding Standard
+    O código DEVE seguir todas as regras descritas no PSR-1.
+    O termo 'StudlyCaps' no PSR-1 DEVE ser interpretado como PascalCase, onde a primeira letra de cada palavra é capitalizada, incluindo a primeira letra.
+
+Files
+    Todos os arquivos PHP DEVEM usar apenas o caractere LF (linefeed) do Unix como terminador de linha.
+    Todos os arquivos PHP DEVEM terminar com uma linha não vazia, terminada com um único LF.
+    A tag de fechamento ?> DEVE ser omitida de arquivos que contenham apenas PHP
+
+Lines
+    NÃO DEVE haver um limite rígido no comprimento das linhas.
+    O limite flexível no comprimento das linhas DEVE ser de 120 caracteres.
+    NÃO DEVE haver espaços em branco no final das linhas.
+    NÃO DEVE haver mais de uma instrução por linha.
+
+Indenting
+    O código DEVE usar uma indentação de 4 espaços para cada nível de indentação e NÃO DEVE usar tabulações para indentar.
+
+Keywords and Types
+    Todas as palavras-chave e tipos reservados do PHP [1][2] DEVEM estar em letras minúsculas.
+    Quaisquer novos tipos e palavras-chave adicionados às futuras versões do PHP DEVEM estar em letras minúsculas.
+    A forma curta das palavras-chave de tipo DEVE ser usada, ou seja, bool em vez de boolean, int em vez de integer, etc.
+
+
+O cabeçalho de um arquivo PHP pode consistir em vários blocos diferentes. Se presente, cada um dos blocos abaixo DEVE ser separado por uma única linha em branco e NÃO DEVE conter uma linha em branco. Cada bloco DEVE estar na ordem listada abaixo, embora blocos que não sejam relevantes possam ser omitidos.
+
+Quando um arquivo contém uma mistura de HTML e PHP, qualquer uma das seções acima ainda pode ser usada. Se for o caso, elas DEVEM estar presentes no topo do arquivo, mesmo que o restante do código consista em uma tag de fechamento PHP e, em seguida, uma mistura de HTML e PHP.
+Quando a tag de abertura <?php está na primeira linha do arquivo, ela DEVE estar em sua própria linha, sem outras instruções, a menos que seja um arquivo contendo marcação fora das tags de abertura e fechamento PHP.
+As declarações de importação NUNCA devem começar com uma barra invertida inicial, pois sempre devem estar totalmente qualificadas.

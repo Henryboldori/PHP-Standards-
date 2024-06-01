@@ -1,0 +1,14 @@
+PSR-18: HTTP Client
+
+O objetivo desta PSR é permitir que os desenvolvedores criem bibliotecas desacopladas das implementações de cliente HTTP. Isso tornará as bibliotecas mais reutilizáveis, reduzindo o número de dependências e diminuindo a probabilidade de conflitos de versão.
+Um segundo objetivo é que os clientes HTTP possam ser substituídos conforme o princípio da substituição de Liskov. Isso significa que todos os clientes DEVEM se comportar da mesma forma ao enviar uma solicitação.
+
+Um Client DEVE:
+Reunir uma resposta HTTP 1xx de vários passos por si só, de modo que o que é retornado para a Biblioteca Chamadora seja uma resposta HTTP válida com um código de status 200 ou superior.
+
+Tratamento de Erros
+Um Cliente NÃO DEVE tratar uma solicitação HTTP ou resposta HTTP bem-formada como uma condição de erro. Por exemplo, códigos de status de resposta na faixa 400 e 500 NÃO DEVEM causar uma exceção e DEVEM ser retornados para a Biblioteca Chamadora como normal.
+Um Cliente DEVE lançar uma instância de Psr\Http\Client\ClientExceptionInterface apenas se não for possível enviar a solicitação HTTP de forma alguma ou se a resposta HTTP não puder ser analisada em um objeto de resposta PSR-7.
+
+Se uma solicitação não puder ser enviada porque a mensagem de solicitação não é uma solicitação HTTP bem-formada ou está faltando alguma informação crítica (como um Host ou Método), o Cliente DEVE lançar uma instância de Psr\Http\Client\RequestExceptionInterface.
+Se a solicitação não puder ser enviada devido a uma falha de rede de qualquer tipo, incluindo um tempo limite, o Cliente DEVE lançar uma instância de Psr\Http\Client\NetworkExceptionInterface.

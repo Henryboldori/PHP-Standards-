@@ -1,0 +1,6 @@
+PSR-13: Link definition interfaces
+
+Tem como objetivo fornecer aos desenvolvedores PHP uma maneira simples e comum de representar um link de hipermídia independentemente do formato de serialização que está sendo usado
+Serializadores DEVEM codificar todos os atributos fornecidos possíveis para permitir a extensão pelo usuário, a menos que seja impedido pela definição de um formato de serialização.
+Serializadores DEVEM usar o primeiro valor fornecido e ignorar todos os valores subsequentes.
+Os Serializadores DEVEM omitir completamente o atributo, a menos que fazer isso altere o significado semântico do resultado

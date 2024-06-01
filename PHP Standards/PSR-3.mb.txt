@@ -1,0 +1,6 @@
+PSR-3 Logger Innterface
+
+Frameworks e CMSs que têm necessidades personalizadas PODEM estender a interface para seus próprios propósitos, mas DEVEM permanecer compatíveis com este documento
+A LoggerInterface expõe oito métodos para escrever logs nos oito níveis da RFC 5424 (debug, info, notice, warning, error, critical, alert, emergency).
+Os nomes dos placeholders DEVEM corresponder a chaves no array de contexto.
+Se um objeto Exception for passado nos dados de contexto, ele DEVE estar na chave 'exception'

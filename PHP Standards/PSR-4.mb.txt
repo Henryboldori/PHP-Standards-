@@ -1,0 +1,7 @@
+PSR-4: Autoloader
+
+Esta PSR descreve uma especificação para carregamento automático de classes a partir de caminhos de arquivos
+O nome de classe totalmente qualificado DEVE ter um nome de namespace de nível superior, também conhecido como "namespace do fornecedor".
+Todos os nomes de classe DEVEM ser referenciados de forma sensível a maiúsculas e minúsculas.
+O nome de classe final corresponde a um nome de arquivo que termina em .php. O nome do arquivo DEVE corresponder à grafia do nome da classe final.
+Implementações de carregamento automático NÃO DEVEM lançar exceções, NÃO DEVEM gerar erros de qualquer nível e NÃO DEVEM retornar um valor.

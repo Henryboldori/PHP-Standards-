@@ -1,0 +1,7 @@
+PSR-16: Common Interface for Caching Libraries
+
+O caching é uma forma comum de melhorar o desempenho de qualquer projeto, tornando as bibliotecas de caching uma das características mais comuns de muitos frameworks e bibliotecas.
+Bibliotecas Implementadoras DEVEM suportar no mínimo a funcionalidade TTL.
+A Biblioteca Implementadora DEVE interpretar isso como um pedido para armazenar o item para sempre, ou enquanto a implementação subjacente suportar.
+Se um TTL negativo ou zero for fornecido, o item DEVE ser excluído do cache se existir, pois já está expirado.
+Bibliotecas Implementadoras DEVEM suportar todos os tipos de dados PHP serializáveis.

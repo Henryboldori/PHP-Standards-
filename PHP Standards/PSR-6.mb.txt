@@ -1,0 +1,11 @@
+PSR-6: Caching Interface
+
+O objetivo desta PSR é permitir que os desenvolvedores criem bibliotecas conscientes de cache que possam ser integradas em frameworks e sistemas existentes sem a necessidade de desenvolvimento personalizado.
+Bibliotecas Implementadoras DEVEM suportar chaves consistindo nos caracteres A-Z, a-z, 0-9, _, e . em qualquer ordem na codificação UTF-8 e com um comprimento de até 64 caracteres.
+As bibliotecas  DEVEM ser capazes de retornar a string de chave original e não modificada.
+Bibliotecas Chamadas DEVEM certificar-se de verificar isHit() em todas as chamadas get().
+Um valor expirado DEVE sempre ser considerado uma falta de cache.
+Um Pool DEVE garantir que quaisquer itens de cache diferidos sejam eventualmente persistidos e que os dados não sejam perdidos.
+Quando uma Biblioteca Chamada invoca o método commit(), todos os itens diferidos pendentes DEVEM ser persistidos
+Solicitações para um item de cache que foi diferido DEVEM retornar o item diferido mas ainda não persistido.
+bibliotecas implementadoras NÃO DEVEM lançar exceções além daquelas definidas pela interface, e DEVEM capturar quaisquer erros ou exceções disparadas por um armazenamento de dados subjacente e não permitir que elas apareçam.

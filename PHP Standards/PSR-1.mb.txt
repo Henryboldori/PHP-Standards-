@@ -1,0 +1,8 @@
+PSR-1: Basic coding standard
+
+Código PHP DEVE usar as tags longas <?php ?> ou as tags curtas de eco <?= ?>; NÃO DEVE usar outras variações de tags.
+Nomes de classes DEVEM ser declarados em StudlyCaps.
+Constantes de classe DEVEM ser declaradas em maiúsculas com separadores de sublinhado
+Nomes de métodos DEVEM ser declarados em camelCase().
+
+
